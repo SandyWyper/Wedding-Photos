@@ -10,9 +10,6 @@ import { Swiper, SwiperSlide } from "swiper/react"
 
 // Import Swiper styles
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
@@ -70,7 +67,7 @@ export default IndexPage
 
 export const data = graphql`
   {
-    allFile {
+    allFile(filter: { dir: { regex: "/gallery-pics/" } }) {
       nodes {
         childImageSharp {
           gatsbyImageData
